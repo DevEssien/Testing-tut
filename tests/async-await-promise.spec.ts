@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import Calculator from '../src/calculator';
 
-describe.only('ASYNC AWAIT PROMISE TEST SUITE', () => {
+describe('ASYNC AWAIT PROMISE TEST SUITE', () => {
   let calc: Calculator;
 
   it('should work with async and await', async () => {
