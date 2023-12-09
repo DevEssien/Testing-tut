@@ -1,9 +1,10 @@
 import { assert, expect } from 'chai';
 import Calculator from '../src/calculator';
-import sinon, { SinonSpy } from 'sinon';
+import sinon, { SinonSpy, SinonStub } from 'sinon';
 
 describe.only('TEST WITH SPY, STUD, NOCK', () => {
   let spy: SinonSpy
+  let stub: SinonStub
   let calc: Calculator;
 
   before(() => {
@@ -13,13 +14,15 @@ describe.only('TEST WITH SPY, STUD, NOCK', () => {
   describe('ADD test suite', () => {
     it('should return sum', () => {
       spy = sinon.spy(calc, 'add');
+      stub = sinon.stub(calc, 'getRandomValue').returns(2);
 
       const result = calc.add(2, 3);
 
-      assert.equal(result, 5);
+      assert.equal(result, 7);
       assert.strictEqual(spy.calledOnceWith(2, 3), true);
 
       spy.restore();
+      stub.restore();
     });
   });
 
@@ -34,11 +37,5 @@ describe.only('TEST WITH SPY, STUD, NOCK', () => {
 
       spy.restore();
     });
-  })
-
-  // describe('RANDOM VALUE test suite', () => {
-  //   it('should return a random value from 1 to 10', () => {
-  //     const randomValue = calc.getRandomValue();
-  //   })
-  // })
+  });
 })
