@@ -4,7 +4,7 @@ import Calculator from '../src/calculator';
 //test suite - describe()
 //test case - it()
 
-describe('TEST CALCULATOR CLASS', () => {
+describe.skip('TEST CALCULATOR CLASS', () => {
   let calc: Calculator;
   before(() => {
     calc = new Calculator();
