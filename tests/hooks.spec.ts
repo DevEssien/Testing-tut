@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 
-describe.only('HOOKS Test', () => {
+describe('HOOKS Test', () => {
   before(() => {
     console.log('before any test case');
   });

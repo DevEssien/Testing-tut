@@ -1,6 +1,7 @@
 export default class Calculator {
   add(a: number, b: number): number {
-    return a + b;
+    const c = this.getRandomValue();
+    return a + b + c;
   }
 
   subtract(a: number, b: number): number {
@@ -14,5 +15,9 @@ export default class Calculator {
 
   multiply(a: number, b: number): number {
     return a * b;
+  }
+
+  getRandomValue(): number {
+    return Math.floor((Math.random() * 10) + 1);
   }
 }
