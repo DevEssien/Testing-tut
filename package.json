@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:dev": "set TS_NODE_COMPILER_OPTIONS={\"module\": \"commonjs\" } & mocha --require ts-node/register ./tests/**/*.spec.ts --watch --watch-files ./tests, ./src",
-    "test:coverage": "set TS_NODE_COMPILER_OPTIONS={\"module\": \"commonjs\" } & nyc --reporter=text mocha --require ts-node/register ./tests/**/*.spec.ts"
+    "test:coverage": "set TS_NODE_COMPILER_OPTIONS={\"module\": \"commonjs\" } & nyc  --reporter=html mocha --require ts-node/register ./tests/**/*.spec.ts"
   },
   "keywords": [],
   "author": "",

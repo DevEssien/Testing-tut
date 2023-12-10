@@ -1,6 +1,6 @@
 export default class Calculator {
   add(a: number, b: number): number {
-    this.logMessage('logging add function');
+    console.log(this.logMessage('logging add function'));
     const c = this.getRandomValue();
     return a + b + c;
   }
@@ -24,7 +24,7 @@ export default class Calculator {
   }
 
   logMessage(msg: string) {
-    console.log(msg);
+    return msg;
   }
 
   asyncFunctionPromise(): Promise<number> {

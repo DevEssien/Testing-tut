@@ -5,7 +5,7 @@ import nock from 'nock';
 
 const baseUrl = 'https://jsonplaceholder.typicode.com';
 
-describe.only('API TESTING SUITE', () => {
+describe('API TESTING SUITE', () => {
   let user: User;
 
   describe('GET request suite', () => {

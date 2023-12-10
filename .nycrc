@@ -1,0 +1,16 @@
+{
+  "check-coverage": true,
+  "extension": [".ts"],
+  "include": ["src/**/*.ts", "payload/**/*.ts"],
+  "exclude": ["test/**/*.spec.ts"],
+  "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+  ],
+  "report-dir": "./.unittest_report",
+  "statements": 95,
+  "branches": 95,
+  "functions": 95,
+  "lines": 95
+}
