@@ -2,7 +2,7 @@ import { assert, expect } from 'chai';
 import Calculator from '../src/calculator';
 import sinon, { SinonMock, SinonSpy, SinonStub } from 'sinon';
 
-describe.only('TEST WITH SPY, STUD, MOCK', () => {
+describe('TEST WITH SPY, STUD, MOCK', () => {
   let spy: SinonSpy
   let stub: SinonStub
   let mock: SinonMock;
@@ -17,9 +17,9 @@ describe.only('TEST WITH SPY, STUD, MOCK', () => {
   });
 
   afterEach(() => {
-    spy.restore();
-    stub.restore();
-    mock.restore();
+    if (spy) spy.restore();
+    if (stub) stub.restore();
+    if (mock) mock.restore();
   })
 
   describe('ADD test suite', () => {
@@ -41,7 +41,6 @@ describe.only('TEST WITH SPY, STUD, MOCK', () => {
   describe('SUBTRACT test suite', () => {
     it('should return subtraction', () => {
       spy = sinon.spy(calc, 'subtract');
-      // mock = sinon.mock(calc);
 
       let expectation = mock.expects('logMessage').exactly(1).withArgs('logging subtract function')
 
@@ -50,10 +49,6 @@ describe.only('TEST WITH SPY, STUD, MOCK', () => {
       assert.equal(result, 1);
       assert.strictEqual(spy.calledOnceWith(3,2), true);
       expectation.verify();
-
-      // spy.restore();
-    
-      // mock.restore();
     });
   });
 })

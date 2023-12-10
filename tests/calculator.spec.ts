@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { expect, assert } from 'chai';
 import Calculator from '../src/calculator';
 
 //test suite - describe()
@@ -9,20 +9,21 @@ describe('TEST CALCULATOR CLASS', () => {
   before(() => {
     calc = new Calculator();
   });
-  describe('ADD test suite', () => {
-    it('should return sum', () => {
-      const result = calc.add(2, 3);
-      expect(result).to.equal(5);
-    });
-  });
+  // describe('ADD test suite', () => {
+  //   it('should return sum', () => {
+  //     const result = calc.add(2, 3);
 
-  describe('SUBTRACT test suite', () => {
-    it('should return subtraction', () => {
-      const result = calc.subtract(3, 2);
+  //     expect(result).to.equal(5);
+  //   });
+  // });
+
+  // describe('SUBTRACT test suite', () => {
+  //   it('should return subtraction', () => {
+  //     const result = calc.subtract(3, 2);
   
-      expect(result).to.equal(1);
-    });
-  })
+  //     expect(result).to.equal(1);
+  //   });
+  // });
 
   describe('DIVIDE test suite', () => {
     it('should return divide', () => {
@@ -43,4 +44,19 @@ describe('TEST CALCULATOR CLASS', () => {
     });
   });
 
-})
+  describe('RANDOM NUMBER test suite', () => {
+    it('should return random value from 1 to 10', () => {
+      const result = calc.getRandomValue();
+      assert.isAtLeast(result, 1);
+      assert.isAtMost(result, 10);
+    });
+  });
+  describe('LOG MESSAGE test suite', () => {
+    it('should return a  logging string message', () => {
+      const result = calc.logMessage('hello');
+      
+      assert.isOk(result);
+      assert.typeOf(result, 'string');
+    });
+  });
+});
