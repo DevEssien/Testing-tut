@@ -33,7 +33,6 @@ describe.only('API TESTING SUITE', () => {
       nock(baseUrl).post('/users', payload).reply(201, expectedUserRes)
 
       const res = await user.saveUser(payload);
-      console.log(res.data)
 
       assert.isOk(res.data);
       assert.equal(res.status, 201);
